@@ -4,7 +4,11 @@ const router = Router();
 
 const { Pool, Client } = require('pg');
 
-const pool = new Pool();
+const connectionString = 'postgres://gmwzqtqzboaewb:e5dec37245a1c426e68be5a523da02f5d8b6e744467f95656e9a3af606b29ddf@ec2-52-72-99-110.compute-1.amazonaws.com:5432/dcfb6hfabhfn0q?ssl=no-verify'
+
+const pool = new Pool({
+  connectionString,
+})
 
 //Prepared Statements para incrementar eficiencia en las busquedas
 const todas = {
