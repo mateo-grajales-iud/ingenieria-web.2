@@ -135,6 +135,7 @@ router.post("/new", async (req, res) => {
 
 //Borrar marca
 router.post("/delete", async (req, res) => {
+    console.log(req);
     try {
         deleteEstadoDeEquipo.values = [req.body.id];
         const response = await pool.query(deleteEstadoDeEquipo)
